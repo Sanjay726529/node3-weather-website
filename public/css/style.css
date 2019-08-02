@@ -42,14 +42,15 @@ header a {
 }
 
 input {
-    border: 1px solid #cccccc;
+    border: 1px solid #ffffff;
     padding: 8px;
+    background-color: yellowgreen;
 }
 
 button {
     cursor: pointer;
-    border: 1px solid darkblue;
-    background: skyblue;
+    border: 1px solid #ffffff;
+    background: yellowgreen;
     color:darkblue;
     padding: 8px;
 }
