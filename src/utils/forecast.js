@@ -10,7 +10,14 @@ const forecast = (lat, long, callback) => {
         } else if(body.error) {
             callback('Unable to fetch the forecast for the given location. Try different search term', undefined);
         }else {
-            callback(undefined, body.daily.data[0].summary + " It is currently " + body.currently.temperature + " degrees out. There is " + body.currently.precipProbability + "% chance of rain");
+            callback(undefined, {
+                currentTime: body.currently.time,
+                summary: body.currently.summary,
+                rainPossibility: body.currently.precipProbability + "%",
+                currentTemp: body.currently.temperature,
+                humidity: body.currently.humidity,
+                windSpeed: body.currently.windSpeed
+            });
         }
     })
 

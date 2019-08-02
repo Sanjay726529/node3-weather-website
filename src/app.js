@@ -54,7 +54,7 @@ app.get("/weather", (req, res) => {
             })
         }
 
-        forecast(longitude, latitude, (error, forecastData) => {
+        forecast(longitude, latitude, (error, {currentTime, summary, rainPossibility, currentTemp, humidity, windSpeed} = {}) => {
             if (error) {
                 return res.send({
                     error: error
@@ -64,7 +64,12 @@ app.get("/weather", (req, res) => {
             res.send({
                 userAddress: req.query.address,
                 placeName,
-                weatherSummary: forecastData
+                currentTime,
+                summary,
+                rainPossibility,
+                currentTemp,
+                humidity,
+                windSpeed
             })
         })
 

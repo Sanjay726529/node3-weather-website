@@ -19,8 +19,10 @@ weatherForm.addEventListener('submit', (e)=> {
             messageOne.textContent = data.error;
             //messageTwo.textContent = '';
         } else {
-            messageOne.textContent = data.placeName;
-            messageTwo.textContent = data.weatherSummary;
+            const newline = "\r\n"
+            messageOne.textContent = data.placeName + " (" + data.currentTime + ")";
+            messageTwo.textContent = "Weather Summary: " + data.summary + newline + "Possibility of rain: " + data.rainPossibility
+            + newline + "Temperature: " + data.currentTemp + newline + "Humidity: " + data.humidity + newline + "Wind Speed: " + data.windSpeed;
         }
     })
 })

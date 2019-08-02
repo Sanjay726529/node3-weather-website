@@ -53,3 +53,7 @@ button {
     color:darkblue;
     padding: 8px;
 }
+
+#message-2 {
+    white-space: pre;
+}
