@@ -11,7 +11,7 @@ const forecast = (lat, long, callback) => {
             callback('Unable to fetch the forecast for the given location. Try different search term', undefined);
         }else {
             callback(undefined, {
-                currentTime: body.currently.time,
+                currentTime: new Date(body.currently.time),
                 summary: body.currently.summary,
                 rainPossibility: body.currently.precipProbability + "%",
                 currentTemp: body.currently.temperature,
